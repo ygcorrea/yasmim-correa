@@ -1,5 +1,8 @@
 <template>
-  <v-timeline>
+<v-container >
+
+  <v-timeline   align-top
+    :dense="$vuetify.breakpoint.smAndDown">
     <v-timeline-item
       v-for="(year, i) in years"
       :key="i"
@@ -31,7 +34,9 @@
       </v-col>
     </v-timeline-item>
   </v-timeline>
+</v-container>
 </template>
+ 
 <script>
 export default {
   data: () => ({

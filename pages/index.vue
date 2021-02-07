@@ -1,6 +1,6 @@
 <template>
   <v-app dark>
-    <div style="width: 100vw">
+    <div >
       <v-app-bar color="black" height="100" :clipped-left="clipped" fixed app>
         <v-toolbar-title v-text="title" />
         <v-spacer />
@@ -14,7 +14,7 @@
           large
           @click="$vuetify.goTo('#my-skills')"
         >
-          <span class="grey--text text--darken-1 font-weight-bold">
+          <span class="black--text text--darken-1 font-weight-bold">
             Skills
           </span>
         </v-btn>
@@ -24,8 +24,18 @@
           large
           @click="$vuetify.goTo('#my-projects')"
         >
-          <span class="grey--text text--darken-1 font-weight-bold">
+          <span class="black--text text--darken-1 font-weight-bold">
             Projects
+          </span>
+        </v-btn>
+        <v-btn download
+          class="ma-3 text-decoration-none"
+          color="white"
+          large
+         href="https://drive.google.com/u/0/uc?id=1ZJ9l22xcqSDZvDzLK42fuIBKDn4fhBDG&export=download"
+        >
+          <span class="black--text text--darken-1 font-weight-bold">
+            Download CV
           </span>
         </v-btn>
       </v-app-bar>
