@@ -1,0 +1,229 @@
+<template>
+  <v-app dark>
+    <div style="width: 100vw">
+      <v-app-bar color="black" height="100" :clipped-left="clipped" fixed app>
+        <v-toolbar-title v-text="title" />
+        <v-spacer />
+        <a class="ma-3" href="https://github.com/ygcorrea">
+          <img class="svgI" src="@/assets/icons/github.png" alt="github" />
+        </a>
+
+        <v-btn
+          class="ma-3"
+          color="white"
+          large
+          @click="$vuetify.goTo('#my-skills')"
+        >
+          <span class="grey--text text--darken-1 font-weight-bold">
+            Skills
+          </span>
+        </v-btn>
+        <v-btn
+          class="ma-3"
+          color="white"
+          large
+          @click="$vuetify.goTo('#my-projects')"
+        >
+          <span class="grey--text text--darken-1 font-weight-bold">
+            Projects
+          </span>
+        </v-btn>
+      </v-app-bar>
+      <v-divider />
+      <v-main>
+        <v-app>
+          <section id="hero">
+            <v-row no-gutters>
+              <v-img
+                :max-height="'calc(100vh - ' + $vuetify.application.top + 'px)'"
+                src="https://user-images.githubusercontent.com/58710976/107124919-4d321900-6885-11eb-8d10-237312816eb3.png"
+              >
+                <v-theme-provider dark>
+                  <v-container fill-height>
+                    <v-row
+                      align="center"
+                      class="white--text mx-auto"
+                      justify="center"
+                    >
+                      <v-col class="white--text text-center" cols="12" tag="h1">
+                        <span
+                          :class="[
+                            $vuetify.breakpoint.smAndDown
+                              ? 'display-1'
+                              : 'display-2',
+                          ]"
+                          class="font-weight-light"
+                        >
+                          WELCOME TO
+                        </span>
+
+                        <br />
+
+                        <span
+                          :class="[
+                            $vuetify.breakpoint.smAndDown
+                              ? 'display-3'
+                              : 'display-4',
+                          ]"
+                          class="font-weight-black"
+                        >
+                          MY PORTFOLIO
+                        </span>
+                      </v-col>
+
+                      <v-btn
+                        class="align-self-end"
+                        fab
+                        large
+                        outlined
+                        @click="$vuetify.goTo('#about-me')"
+                      >
+                        <v-icon>mdi-chevron-double-down</v-icon>
+                      </v-btn>
+                    </v-row>
+                  </v-container>
+                </v-theme-provider>
+              </v-img>
+            </v-row>
+          </section>
+          <section id="about-me">
+            <div class="py-12"></div>
+
+            <v-container class="text-center">
+              <v-responsive class="mx-auto mb-8" width="56">
+                <v-divider class="mb-1"></v-divider>
+
+                <v-divider></v-divider>
+              </v-responsive>
+
+              <v-responsive
+                class="mx-auto title font-weight-light mb-8"
+                max-width="720"
+              >
+                <h3>HELLO WORLD</h3>
+                <h2 class="display-2 font-weight-bold mb-3">
+                  I'M YASMIM CORRÊA
+                </h2>
+
+                <span
+                  >i'm a Software developer and a passionate about Javascript,
+                  science, physics and technology 🤘.</span
+                >
+                <p>
+                  I have about 3 years of experience with web and mobile
+                  development
+                </p>
+              </v-responsive>
+
+              <v-avatar class="elevation-12 mb-12" size="128">
+                <v-img
+                  src="https://user-images.githubusercontent.com/58710976/107131372-6f8f5b00-68b4-11eb-8557-de2f8c2b73c2.JPG"
+                ></v-img>
+              </v-avatar>
+
+              <div></div>
+              <v-btn
+                class="ma-2"
+                color="white"
+                href="https://github.com/ygcorrea"
+                large
+              >
+                <img src="@/assets/icons/github.png" alt="github" />
+                <span class="grey--text text--darken-1 font-weight-bold">
+                  Github
+                </span>
+              </v-btn>
+              <v-btn
+                class="ma-3"
+                color="white"
+                href="https://www.linkedin.com/in/ygcorrea/"
+                large
+              >
+                <img src="@/assets/icons/linkedin.png" alt="linkedin" />
+
+                <span class="ml-2 grey--text text--darken-1 font-weight-bold">
+                  Linkedin
+                </span>
+              </v-btn>
+            </v-container>
+
+            <div class="py-12"></div>
+          </section>
+          <section class="black">
+            <div class="py-12"></div>
+
+            <v-container
+              style="width: 100vw"
+              id="my-skills"
+              class="text-center black"
+            >
+              <h2 class="display-2 font-weight-bold mb-3">SKILLS</h2>
+
+              <v-responsive class="mx-auto mb-12" width="56">
+                <v-divider class="mb-1"></v-divider>
+
+                <v-divider></v-divider>
+              </v-responsive>
+
+              <Skills />
+            </v-container>
+
+            <div class="py-12"></div>
+          </section>
+          <section id="features">
+            <div class="py-12"></div>
+            <v-divider />
+            <v-container id="my-projects" class="text-center">
+              <h2 class="display-2 font-weight-bold mb-3">
+                PROJECTS THAT I WORKED ON
+              </h2>
+
+              <v-responsive class="mx-auto mb-12" width="56">
+                <v-divider class="mb-1"></v-divider>
+
+                <v-divider></v-divider>
+              </v-responsive>
+
+              <Timeline />
+            </v-container>
+
+            <div class="py-12"></div>
+          </section>
+          <v-divider />
+        </v-app>
+      </v-main>
+
+      <v-footer class="justify-center" color="#292929" height="40">
+        <div
+          class="subtitle font-weight-light grey--text text--lighten-1 text-center"
+        >
+          &copy; {{ new Date().getFullYear() }} — Made with 💜 by Yasmim Corrêa
+        </div>
+      </v-footer>
+    </div>
+  </v-app>
+</template>
+
+<script>
+import Skills from "../components/skills.vue";
+import Timeline from "../components/timeline.vue";
+export default {
+  components: { Timeline, Skills },
+  data() {
+    return {
+      clipped: false,
+      fixed: false,
+      title: "",
+    };
+  },
+};
+</script>
+<style scoped>
+.svgI {
+  background: whitesmoke;
+  border-radius: 50%;
+  width: 50px;
+  cursor: pointer;
+}
+
+</style>
