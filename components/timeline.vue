@@ -1,5 +1,4 @@
 <template>
-<v-container >
 
   <v-timeline   align-top
     :dense="$vuetify.breakpoint.smAndDown">
@@ -9,7 +8,7 @@
       :color="year.color"
       small
     >
-      <template v-slot:opposite>
+      <template>
         <span
           :class="`headline font-weight-bold ${year.color}--text`"
           v-text="year.year"
@@ -34,7 +33,6 @@
       </v-col>
     </v-timeline-item>
   </v-timeline>
-</v-container>
 </template>
  
 <script>
