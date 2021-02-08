@@ -1,43 +1,58 @@
 <template>
   <v-app dark>
-    <div >
-      <v-app-bar color="black" height="100" :clipped-left="clipped" fixed app>
-        <v-toolbar-title v-text="title" />
-        <v-spacer />
-        <a class="ma-3" href="https://github.com/ygcorrea">
-          <img class="svgI" src="@/assets/icons/github.png" alt="github" />
-        </a>
-
-        <v-btn
-          class="ma-3"
-          color="white"
-          large
-          @click="$vuetify.goTo('#my-skills')"
+    <div>
+      <v-app-bar
+        align="baseline"
+        class="col-12"
+        color="black"
+        height="100"
+        fixed
+        app
+      >
+        <v-row
+        align="center"
+          justify-lg="end"
+          justify-sm="center"
+          style="display: flex; flex-wrap: nowrap"
+          class="col-12"
+          sm="6"
+          md="4"
         >
-          <span class="black--text text--darken-1 font-weight-bold">
-            Skills
-          </span>
-        </v-btn>
-        <v-btn
-          class="ma-3"
-          color="white"
-          large
-          @click="$vuetify.goTo('#my-projects')"
-        >
-          <span class="black--text text--darken-1 font-weight-bold">
-            Projects
-          </span>
-        </v-btn>
-        <v-btn download
-          class="ma-3 text-decoration-none"
-          color="white"
-          large
-         href="https://drive.google.com/u/0/uc?id=1ZJ9l22xcqSDZvDzLK42fuIBKDn4fhBDG&export=download"
-        >
-          <span class="black--text text--darken-1 font-weight-bold">
-            Download CV
-          </span>
-        </v-btn>
+          <a class="hidden-sm-and-down ma-3" v-bind="size"  href="https://github.com/ygcorrea">
+            <img class="svgI" src="@/assets/icons/github.png" alt="github" />
+          </a>
+          <v-btn
+            v-bind="size"
+            class="ma-3"
+            color="white"
+            @click="$vuetify.goTo('#my-skills')"
+          >
+            <span class="black--text text--darken-1 font-weight-bold">
+              Skills
+            </span>
+          </v-btn>
+          <v-btn
+            v-bind="size"
+            class="ma-3"
+            color="white"
+            @click="$vuetify.goTo('#my-projects')"
+          >
+            <span class="black--text text--darken-1 font-weight-bold">
+              Projects
+            </span>
+          </v-btn>
+          <v-btn
+            v-bind="size"
+            download
+            class="ma-3 text-decoration-none"
+            color="white"
+            href="https://drive.google.com/u/0/uc?id=1ZJ9l22xcqSDZvDzLK42fuIBKDn4fhBDG&export=download"
+          >
+            <span class="black--text text--darken-1 font-weight-bold">
+              Download CV
+            </span>
+          </v-btn>
+        </v-row>
       </v-app-bar>
       <v-divider />
       <v-main>
@@ -82,6 +97,7 @@
                       </v-col>
 
                       <v-btn
+                        v-bind="size"
                         class="align-self-end"
                         fab
                         large
@@ -226,6 +242,14 @@ export default {
       title: "",
     };
   },
+  computed: {
+    size() {
+      const size = { xs: "x-small", sm: "small",}[
+        this.$vuetify.breakpoint.name
+      ];
+      return size ? { [size]: true } : {};
+    },
+  },
 };
 </script>
 <style scoped>
@@ -235,5 +259,4 @@ export default {
   width: 50px;
   cursor: pointer;
 }
-
 </style>
