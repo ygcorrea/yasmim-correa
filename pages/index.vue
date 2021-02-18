@@ -3,14 +3,14 @@
     <div>
       <v-app-bar
         align="baseline"
-        class="col-12"
-        color="black"
+        class="col-12 hidden-md-and-down"
+        color="#93b2bd"
         height="100"
         fixed
         app
       >
         <v-row
-        align="center"
+          align="center"
           justify-lg="end"
           justify-sm="center"
           style="display: flex; flex-wrap: nowrap"
@@ -18,9 +18,16 @@
           sm="6"
           md="4"
         >
-          <a class="hidden-sm-and-down ma-3" v-bind="size"  href="https://github.com/ygcorrea">
-            <img class="svgI" src="@/assets/icons/github.png" alt="github" />
-          </a>
+          <v-btn
+            v-bind="size"
+            class="ma-3"
+            color="white"
+            @click="$vuetify.goTo('#about-me')"
+          >
+            <span class="black--text text--darken-1 font-weight-bold">
+              Ebooks
+            </span>
+          </v-btn>
           <v-btn
             v-bind="size"
             class="ma-3"
@@ -28,41 +35,16 @@
             @click="$vuetify.goTo('#my-skills')"
           >
             <span class="black--text text--darken-1 font-weight-bold">
-              Skills
-            </span>
-          </v-btn>
-          <v-btn
-            v-bind="size"
-            class="ma-3"
-            color="white"
-            @click="$vuetify.goTo('#my-projects')"
-          >
-            <span class="black--text text--darken-1 font-weight-bold">
-              Projects
-            </span>
-          </v-btn>
-          <v-btn
-            v-bind="size"
-            download
-            class="ma-3 text-decoration-none"
-            color="white"
-            href="https://drive.google.com/u/0/uc?id=1ZJ9l22xcqSDZvDzLK42fuIBKDn4fhBDG&export=download"
-          >
-            <span class="black--text text--darken-1 font-weight-bold">
-              Download CV
+              Especialidades
             </span>
           </v-btn>
         </v-row>
       </v-app-bar>
-      <v-divider />
       <v-main>
         <v-app>
           <section id="hero">
-            <v-row no-gutters>
-              <v-img
-                :max-height="'calc(100vh - ' + $vuetify.application.top + 'px)'"
-                src="https://user-images.githubusercontent.com/58710976/107124919-4d321900-6885-11eb-8d10-237312816eb3.png"
-              >
+            <v-row no-gutters class="background-stl">
+              <v-container>
                 <v-theme-provider dark>
                   <v-container fill-height>
                     <v-row
@@ -70,7 +52,15 @@
                       class="white--text mx-auto"
                       justify="center"
                     >
-                      <v-col class="white--text text-center" cols="12" tag="h1">
+                      <v-row
+                        class="white--text text-center main-text col-10"
+                        style="
+                          display: flex;
+                          justify-content: center;
+                          flex-direction: column;
+                          align-items: center;
+                        "
+                      >
                         <span
                           :class="[
                             $vuetify.breakpoint.smAndDown
@@ -79,28 +69,96 @@
                           ]"
                           class="font-weight-light"
                         >
-                          WELCOME TO
+                          Gabriele Gonçalves de Souza Corrêa
                         </span>
-
                         <br />
 
-                        <span
-                          :class="[
-                            $vuetify.breakpoint.smAndDown
-                              ? 'display-3'
-                              : 'display-4',
-                          ]"
-                          class="font-weight-black"
+                        <v-row
+                          justify="center"
+                          align="center"
+                          class="ma-3"
+                          style="display: flex; flex-direction: column"
                         >
-                          MY PORTFOLIO
-                        </span>
-                      </v-col>
+                          <v-avatar class="elevation-12 mb-0" size="220">
+                            <v-img
+                              src="https://user-images.githubusercontent.com/58710976/108386507-78a0f600-71eb-11eb-990c-d05d334e4ca5.png"
+                            ></v-img>
+                          </v-avatar>
 
+                          <span class="ma-3 color-primary">
+                            <v-icon color="#5c637c" class="ma-3"
+                              >mdi-book-open-page-variant</v-icon
+                            >
+                            Pós Graduada em:
+                          </span>
+                          <small class="color-primary">
+                            Nutrição clínica funcional, Psiquiatria, Sindrome de
+                            Down, Nutrição com foco em autismo e TDHA
+                          </small>
+                          <v-row class="font-weight-bold secondary-text ma-5">
+                            <small>
+                              <v-icon color="#5c637c">
+                                mdi-file-certificate-outline
+                              </v-icon>
+                              CRN 16101019
+                            </small>
+                          </v-row>
+                        </v-row>
+                      </v-row>
+
+                      <v-row justify="center" class="ma-2">
+                        <v-btn
+                          color="#93b2bd"
+                          target="_blank"
+                          class="ma-3 width-btn"
+                          href="https://api.whatsapp.com/send?phone=5521979287161"
+                          large
+                        >
+                          <v-icon color="#5c637c">mdi-calendar-outline</v-icon>
+                          <span class="ml-2 text--darken-1 font-weight-bold">
+                            Agende uma consulta
+                          </span>
+                        </v-btn>
+                        <v-btn
+                          class="ma-3 width-btn"
+                          target="_blank"
+                          color="white"
+                          href="https://api.whatsapp.com/send?phone=5521979287161"
+                          large
+                        >
+                          <v-icon color="#93b2bd">mdi-pencil</v-icon>
+
+                          <span
+                            class="ml-2 grey--text text--darken-1 font-weight-bold"
+                          >
+                            Entre em contato
+                          </span>
+                        </v-btn>
+                      </v-row>
+                    </v-row>
+                    <v-row>
+                      <v-row justify="center" class="col-12 lista-container">
+                        <span class="font-weight-bold">
+                          Atendimento nutricional com foco em:
+                        </span>
+                      </v-row>
+                      <v-row class="ma-5" justify="center">
+                        <ul class="list-style">
+                          <li>Autismo</li>
+                          <li>TDAH</li>
+                          <li>Sindrome de Down</li>
+                          <li>Epilepsia</li>
+                          <li>Doenças genéticas raras</li>
+                        </ul>
+                      </v-row>
+                    </v-row>
+                    <v-row justify="center" class="col-12 ma-5">
                       <v-btn
+                        color="#000"
                         v-bind="size"
                         class="align-self-end"
                         fab
-                        large
+                        x-large
                         outlined
                         @click="$vuetify.goTo('#about-me')"
                       >
@@ -109,13 +167,19 @@
                     </v-row>
                   </v-container>
                 </v-theme-provider>
-              </v-img>
+              </v-container>
             </v-row>
           </section>
           <section id="about-me">
             <div class="py-12"></div>
 
             <v-container class="text-center">
+              <h2
+                style="color: #93b2bd"
+                class="display-2 font-weight-bold mb-3"
+              >
+                EBOOKS <v-icon  x-large color="#93b2bd"> mdi-book-open-outline </v-icon>
+              </h2>
               <v-responsive class="mx-auto mb-8" width="56">
                 <v-divider class="mb-1"></v-divider>
 
@@ -123,67 +187,89 @@
               </v-responsive>
 
               <v-responsive
+                style="overflow-x: scroll; overflow-y: hidden"
                 class="mx-auto title font-weight-light mb-8"
-                max-width="720"
               >
-                <h3>HELLO WORLD</h3>
-                <h2 class="display-2 font-weight-bold mb-3">
-                  I'M YASMIM CORRÊA
-                </h2>
-
-                <span
-                  >i'm a Software developer and a passionate about Javascript,
-                  science, physics and technology 🤘.</span
-                >
-                <p>
-                  I have about 3 years of experience with web and mobile
-                  development
-                </p>
+                <div class="container-ebook">
+                  <span class="ebooks-list">
+                    <div class="ebooks-stl">
+                      <img src="@/assets/img/ebook1.JPG" alt="" />
+                    </div>
+                    <v-btn
+                      v-bind="size"
+                      download
+                      class="ma-3 text-decoration-none"
+                      color="white"
+                      href=""
+                    >
+                      <span class="black--text text--darken-1 font-weight-bold">
+                        Baixar Ebook
+                      </span>
+                    </v-btn>
+                  </span>
+                  <span class="ebooks-list">
+                    <div class="ebooks-stl">
+                      <img src="@/assets/img/ebook2.JPG" alt="" />
+                    </div>
+                    <v-btn
+                      v-bind="size"
+                      download
+                      class="ma-3 text-decoration-none"
+                      color="white"
+                      href=""
+                    >
+                      <span class="black--text text--darken-1 font-weight-bold">
+                        Baixar Ebook
+                      </span>
+                    </v-btn>
+                  </span>
+                  <span class="ebooks-list">
+                    <div class="ebooks-stl">
+                      <img src="@/assets/img/ebook3.JPG" alt="" />
+                    </div>
+                    <v-btn
+                      v-bind="size"
+                      download
+                      class="ma-3 text-decoration-none"
+                      color="white"
+                      href=""
+                    >
+                      <span class="black--text text--darken-1 font-weight-bold">
+                        Baixar Ebook
+                      </span>
+                    </v-btn>
+                  </span>
+                  <span class="ebooks-list">
+                    <div class="ebooks-stl">
+                      <img src="@/assets/img/ebook4.JPG" alt="" />
+                    </div>
+                    <v-btn
+                      v-bind="size"
+                      download
+                      class="ma-3 text-decoration-none"
+                      color="white"
+                      href=""
+                    >
+                      <span class="black--text text--darken-1 font-weight-bold">
+                        Baixar Ebook
+                      </span>
+                    </v-btn>
+                  </span>
+                </div>
               </v-responsive>
-
-              <v-avatar class="elevation-12 mb-12" size="128">
-                <v-img
-                  src="https://user-images.githubusercontent.com/58710976/107131372-6f8f5b00-68b4-11eb-8557-de2f8c2b73c2.JPG"
-                ></v-img>
-              </v-avatar>
-
-              <div></div>
-              <v-btn
-                class="ma-2"
-                color="white"
-                href="https://github.com/ygcorrea"
-                large
-              >
-                <img src="@/assets/icons/github.png" alt="github" />
-                <span class="grey--text text--darken-1 font-weight-bold">
-                  Github
-                </span>
-              </v-btn>
-              <v-btn
-                class="ma-3"
-                color="white"
-                href="https://www.linkedin.com/in/ygcorrea/"
-                large
-              >
-                <img src="@/assets/icons/linkedin.png" alt="linkedin" />
-
-                <span class="ml-2 grey--text text--darken-1 font-weight-bold">
-                  Linkedin
-                </span>
-              </v-btn>
             </v-container>
 
             <div class="py-12"></div>
           </section>
-          <section class="black">
+          <section class="background-stl">
             <div class="py-12"></div>
 
             <v-container
               style="width: 100vw"
               id="my-skills"
-              class="text-center black"
+              class="text-center"
             >
-              <h2 class="display-2 font-weight-bold mb-3">SKILLS</h2>
+              <h2 class="display-2 font-weight-bold mb-3">Especialidades <v-icon x-large color="#fff">mdi-carrot</v-icon></h2>
 
               <v-responsive class="mx-auto mb-12" width="56">
                 <v-divider class="mb-1"></v-divider>
@@ -196,32 +282,12 @@
 
             <div class="py-12"></div>
           </section>
-          <section id="features">
-            <div class="py-12"></div>
-            <v-divider />
-            <v-container id="my-projects" class="text-center">
-              <h2 class="display-2 font-weight-bold mb-3">
-                PROJECTS THAT I WORKED ON
-              </h2>
-
-              <v-responsive class="mx-auto mb-12" width="56">
-                <v-divider class="mb-1"></v-divider>
-
-                <v-divider></v-divider>
-              </v-responsive>
-
-              <Timeline />
-            </v-container>
-
-            <div class="py-12"></div>
-          </section>
-          <v-divider />
         </v-app>
       </v-main>
 
-      <v-footer class="justify-center" color="#292929" height="40">
+      <v-footer class="justify-center" color="#93b2bd" height="40">
         <div
-          class="subtitle font-weight-light grey--text text--lighten-1 text-center"
+          class="subtitle font-weight-light black--text text--lighten-1 text-center"
         >
           &copy; {{ new Date().getFullYear() }} — Made with 💜 by Yasmim Corrêa
         </div>
@@ -244,7 +310,7 @@ export default {
   },
   computed: {
     size() {
-      const size = { xs: "x-small", sm: "small",}[
+      const size = { xs: "x-small", sm: "small" }[
         this.$vuetify.breakpoint.name
       ];
       return size ? { [size]: true } : {};
@@ -254,9 +320,87 @@ export default {
 </script>
 <style scoped>
 .svgI {
-  background: whitesmoke;
+  background: #93b2bd;
   border-radius: 50%;
   width: 50px;
   cursor: pointer;
+}
+.secondary-text {
+  font-size: 20px;
+  color: #5c637c;
+}
+.main-text {
+  display: flex;
+  flex-direction: column;
+}
+.background-stl {
+  background: rgb(147, 178, 189);
+  background: linear-gradient(
+    203deg,
+    rgba(147, 178, 189, 1) 12%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  width: 100vw;
+}
+.list-style {
+  color: #5c637c;
+}
+.width-btn {
+  width: 300px;
+}
+.ebooks-list img {
+  width: 500px;
+  height: 500px;
+}
+.ebooks-stl {
+  border: 1px dashed rgb(147, 178, 189);
+}
+.ebooks-list {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  align-items: center;
+}
+.container-ebook {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #93b2bd;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #93b2bd;
+}
+#about-me {
+  background: #f1f1f1;
+}
+.lista-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 30px;
+}
+.lista-container span {
+  font-size: 30px;
+  color: #5c637c;
+}
+.color-primary {
+  color: #5c637c;
 }
 </style>

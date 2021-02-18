@@ -1,27 +1,30 @@
 <template>
-  <section id="items">
+  
+  <section id="items" style="background: #3c415236;">
     <v-parallax
+      style="width: 100vw"
       class="col-12"
-      :height="$vuetify.breakpoint.smAndDown ? 700 : 500"
-      src="https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+      :height="$vuetify.breakpoint.smAndDown ? 500 : 400"
+      src="https://user-images.githubusercontent.com/58710976/108403718-c888b880-71fd-11eb-8575-c1495d703ad3.png"
     >
-      <v-container fill-height class="col-12">
-        <v-row class="mx-auto">
-          <v-col v-for="(item, i) in items" :key="i">
-            <div class="text-center">
-              <div class="display-3 font-weight-black mb-4">
-                <img
-                  class="img-logo"
-                  :src="require(`../assets/icons/${item.logo}`)"
-                />
-              </div>
+      <v-container fill-height class="col-12 container-main">
+        <div class="text-center">
+          <v-chip x-large class="ma-2" color="rgba(147, 178, 189, 1)">
+            Funcional
+          </v-chip>
+          <v-chip x-large class="ma-2" color="rgba(147, 178, 189, 1)">
+            Alergias alimentares
+          </v-chip>
 
-              <div class="title font-weight-regular text-uppercase">
-                {{ item.text }}
-              </div>
-            </div>
-          </v-col>
-        </v-row>
+          <v-chip x-large class="ma-2" color="rgba(147, 178, 189, 1)">
+            Doenças autoimunes
+          </v-chip>
+
+          <v-chip x-large class="ma-2" color="rgba(147, 178, 189, 1)">
+            Pediátrica
+          </v-chip>
+        </div>
+      
       </v-container>
     </v-parallax>
   </section>
@@ -30,42 +33,7 @@
 <script>
 export default {
   data() {
-    return {
-      items: [
-        {
-          logo: "js.svg",
-          text: "Javascript",
-        },
-        {
-          logo: "react.svg",
-          text: "React",
-        },
-        {
-          logo: "react.svg",
-          text: "React Native",
-        },
-        {
-          logo: "next.svg",
-          text: "NextJS",
-        },
-        {
-          logo: "vue.svg",
-          text: "Vue",
-        },
-        {
-          logo: "nuxt.svg",
-          text: "NuxtJS",
-        },
-        {
-          logo: "html.svg",
-          text: "HTML5",
-        },
-        {
-          logo: "css.svg",
-          text: "CSS3",
-        },
-      ],
-    };
+    return {};
   },
 };
 </script>
@@ -74,4 +42,20 @@ export default {
 .img-logo {
   width: 70px;
 }
+.container-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #3c41524f;
+  justify-content: center;
+}
+.list-style {
+  color: #3c4152;
+  font-size: 20px;
+}
+.espec-style {
+  color: #3c4152;
+  font-size: 40px;
+}
+
 </style>

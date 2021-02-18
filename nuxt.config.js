@@ -8,7 +8,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     // titleTemplate: '%s - yasmim-correa',
-    title: 'Yasmim Correa',
+    title: 'Gabriele Correa - Nutricionista',
     htmlAttrs: {
       lang: 'en'
     },
